@@ -22,6 +22,7 @@ java web系统的反网页爬虫程序
 
 使用：
 1.配置web.xml
+
 <filter>
     <filter-name>crawler_defender_filter</filter-name>
     <filter-class>com.xycode.crawlerdefender.filter.GlobalFilter</filter-class>
@@ -60,6 +61,7 @@ java web系统的反网页爬虫程序
   </servlet-mapping>
   
   2.配置crawler-defender.xml
+  
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
 	<!-- 拦截校验配置，超过阀值拦截并返回校验页面  -->
@@ -116,4 +118,6 @@ java web系统的反网页爬虫程序
 	<bot-trap>true</bot-trap>
 	
 </config>
+
+
 
