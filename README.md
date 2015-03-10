@@ -49,7 +49,7 @@ java web系统的反网页爬虫程序
     <servlet-name>crawler_defender_logger_servlet</servlet-name>
     <url-pattern>/crawler-defender/logger</url-pattern>
   </servlet-mapping>
-  
+    
   <servlet>
     <servlet-name>crawler_defender_validator_servlet</servlet-name>
     <servlet-class>com.xycode.crawlerdefender.servlet.ValidatorServlet</servlet-class>
@@ -60,7 +60,7 @@ java web系统的反网页爬虫程序
     <url-pattern>/crawler-defender/validator</url-pattern>
   </servlet-mapping>
   
-  2.配置crawler-defender.xml
+2.配置crawler-defender.xml
   
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
