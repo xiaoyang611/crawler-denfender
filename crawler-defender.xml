@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<!-- 拦截校验配置，超过阀值拦截并返回校验页面  -->
+	<block-validate>
+		<!-- 访问阀值设置 -->
+		<thresholds>
+			<threshold level="seconds" duration="1" value="3" /><!-- 3秒钟内访问阀值为10次 -->
+			<threshold level="minutes" duration="1" value="30" /><!-- 1分钟内访问阀值为30次 -->
+			<threshold level="hours" duration="1" value="200" /><!-- 1小时内访问阀值为200次 -->
+			<threshold level="days" duration="1" value="500" /><!-- 1天内访问阀值为500次 -->
+		</thresholds>
+		<!-- 拦截后校验设置，可以设置为自定义页面 -->
+		<validatorPath>/crawler-defender/validator-page?action=page</validatorPath>
+	</block-validate>
+	
+	<!-- ip白名单,不拦截。ip黑白名单的优先级高于user-agent -->
+	<ipWhiteList>
+		<item>127.0.0.1</item>
+		<item>61.135.168.*</item>
+	</ipWhiteList>
+	
+	<!-- ip黑名单，直接返回401 -->
+	<ipBlackList>
+		<item>192.168.1.102</item>
+	</ipBlackList>
+	
+	<!-- userAgent白名单, 对于此白名单的爬虫，延迟10秒返回页面，以减轻对网站的负载 -->
+	<userAgentWhiteList>
+		<item>Baiduspider+</item>
+		<item>qihoobot</item>
+		<item>Googlebot</item>
+		<item>YodaoBot</item>
+		<item>msnbot</item>
+		<item>Yahoo</item>
+	</userAgentWhiteList>
+	
+	<!-- userAgent黑名单，直接返回401 -->
+	<userAgentBlackList>
+		<item>Commons-HttpClient</item>
+		<item>python</item>
+	</userAgentBlackList>
+	
+	<!-- 日志持久化配置 -->
+	<persistence>
+		<mongo>
+			<serverAddress>localhost:27017</serverAddress>
+			<dbname>test</dbname>
+			<username>root</username>
+			<password>xy123456</password>
+		</mongo>
+	</persistence>
+	
+	<!-- 是否开启爬虫陷阱 -->
+	<bot-trap>true</bot-trap>
+	
+</config>
